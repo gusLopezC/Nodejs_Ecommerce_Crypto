@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Crypto Store</title>
+</head>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+    body {
+        background: linear-gradient( to top, rgba(100, 50, 50, 0.6), rgba(0, 0, 0, 0.8)), url(https://www.atrafloor.com/app/uploads/2017/01/camo-camouflage-pattern-flooring-grey.jpg);
+        background-size: cover;
+        min-height: 100vh;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #39f;
+    }
+    
+    #qt {
+        color: #999;
+    }
+    
+    p .fa[class~="angle"] {
+        font-size: 1.3rem;
+        position: relative;
+        top: 0.15rem;
+        margin: 0 20px;
+        cursor: pointer;
+        color: #d8d8d8;
+        transition: all 0.5s;
+    }
+    
+    p .fa[class~="angle"]:hover {
+        color: #47be73;
+    }
+    
+    .yellow {
+        color: #fecb6c;
+    }
+    
+    .product {
+        height: 500px;
+        width: 600px;
+        background: white;
+        position: relative;
+        left: calc(50% - 300px);
+        margin-top: calc(50vh - 250px);
+    }
+    
+    .product.action {
+        animation: bounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    }
+    
+    .product .header {
+        height: 40px;
+        position: relative;
+        padding: 20px;
+    }
+    
+    .product .header .back {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        border-top: 30px solid #47be73;
+        border-bottom: 30px solid transparent;
+        border-left: 30px solid #47be73;
+        border-right: 30px solid transparent;
+    }
+    
+    .product .header .back:before {
+        content: "←";
+        position: absolute;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.3rem;
+        font-weight: bold;
+        top: -22px;
+        left: -22px;
+    }
+    
+    .product .main {
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+    
+    .product .main .quantity {
+        margin-top: 40px;
+        color: #333;
+    }
+    
+    .product .main h1 {
+        font-size: 4.5rem;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        margin: 0 -5px -15px;
+        color: #232e3a;
+    }
+    
+    .product .main h2 {
+        color: #999;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        margin: 0 0;
+        text-transform: uppercase;
+    }
+    
+    .product .main h3 {
+        color: #232e3a;
+        margin: 0;
+    }
+    
+    .product .main img {
+        max-width: 90%;
+        margin-left: 25px;
+    }
+    
+    .product .main .left,
+    .product .main .right {
+        width: 40%;
+        padding: 0 calc(5% - 1px);
+    }
+    
+    .product .main .right {
+        color: #999;
+        font-size: 0.78rem;
+        line-height: 1.5;
+    }
+    
+    .product .footer {
+        position: absolute;
+        bottom: 0;
+        padding: 5px 40px 5px 0;
+        width: calc(90% - 40px);
+        left: 10%;
+        border-top: 1px solid #ccc;
+    }
+    
+    .product .footer .left p:before {
+        content: "Total Price";
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        color: black;
+        position: absolute;
+        top: -12px;
+        width: 200%;
+    }
+    
+    .product .footer p {
+        color: #47be73;
+        position: relative;
+        font-size: 1.5rem;
+    }
+    
+    .left {
+        float: left;
+    }
+    
+    .right {
+        float: right;
+    }
+    
+    .button_slide {
+        border: 2px solid rgb(216, 2, 134);
+        border-radius: 0px;
+        padding: 18px 36px;
+        display: inline-block;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 14px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        box-shadow: inset 0 0 0 0 #d80286;
+        -webkit-transition: ease-out 0.4s;
+        -moz-transition: ease-out 0.4s;
+        transition: ease-out 0.4s;
+    }
+    
+    .slide_down:hover {
+        box-shadow: inset 0 100px 0 0 #d80286;
+    }
+    
+    @keyframes bounce {
+        50% {
+            transform: translateX(10px);
+        }
+    }
+</style>
+
+<body>
+    <div class="product">
+        <div class="header">
+            <div class="back"></div>
+        </div>
+        <div class="main">
+            <div class="left">
+
+                <img src="https://vive-sano.org/wp-content/uploads/2018/05/donde-adoptar-gatos-de-la-calle.jpg" alt="" />
+            </div>
+            <div class="right">
+                <p>
+                    El 100% de las donaciónes se irán a donación para alimentos para animalitos de la calle.
+                </p>
+                <p>In stock. <a href="">Dona ahora</a></p>
+                <p>
+                    <span class="fa fa-star yellow"></span>
+                    <span class="fa fa-star yellow"></span>
+                    <span class="fa fa-star yellow"></span>
+                    <span class="fa fa-star yellow"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(4.67 - 172 reviews)</span>
+                </p>
+                <p class="quantity">
+                    QUANTITY <span class="fa fa-angle-left angle"></span
+            ><span id="qt">1</span><span class="fa fa-angle-right angle"></span>
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="left">
+                <p id="price">$1.00</p>
+            </div>
+            <div class="right">
+                <p><button class="button_slide slide_down" id="pay">Pagar</button></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.getElementById("pay");
+        const pay = document.getElementById("pay");
+
+        button.addEventListener("click", async() => {
+            const response = await fetch("/create-charge");
+            const data = await response.json();
+
+            console.log(data);
+            // pay.innerHTML = `<a href="${data.hosted_url}">Pay Now</a>`
+            window.location.href = data.hosted_url;
+        });
+    </script>
+</body>
+
+</html>
